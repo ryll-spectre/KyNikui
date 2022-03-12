@@ -1,0 +1,24 @@
+# main.kv
+
+# ######################################## #
+#                 VIEWS                    #
+# ######################################## #
+#:include src/components/views/dashboard/dashboard.kv
+
+MDStackLayout:
+    id: stackLayout
+
+    # White background w/ black outline
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    WindowManager:
+        id: windowManager
+
+        Dashboard:
+            id: dashboard
+            name: "dashboard"
