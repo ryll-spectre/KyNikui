@@ -1,6 +1,13 @@
 # dashboard.kv
 
+#:import utils kivy.utils
 <Dashboard>:
+    canvas.before:
+        Color:
+            rgb: app.kynikuiController.theme.background
+        Rectangle:
+            size: self.size
+            pos: self.pos
 
     BoxLayout:
         orientation: "vertical"
