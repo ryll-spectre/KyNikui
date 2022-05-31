@@ -12,14 +12,16 @@ class Theme():
 
     _themeMode: ThemeMode
 
-    background: str
+    # background: list[float]
+
+    # buttons: list[float]
 
     def __init__(self) -> None:
         # TODO: Theme will be saved from previous session
-        # Default to LIGHT for now
         self._themeMode = ThemeMode.LIGHT
         
         self.background = None
+        self.buttons    = None
 
         self._switchThemeValues()
 
@@ -36,5 +38,7 @@ class Theme():
         """Change all member values to new theme."""
         if self._themeMode == ThemeMode.LIGHT:
             self.background = Constants.themeBackground_Light
+            self.buttons    = Constants.themeButtons_Light
         else:
-            pass
+            self.background = Constants.themeBackground_Dark
+            self.buttons    = Constants.themeButtons_Dark
